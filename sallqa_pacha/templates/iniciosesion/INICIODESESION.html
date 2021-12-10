@@ -1,0 +1,21 @@
+{% extends 'inicio.html' %}
+
+
+{% block contenido %}
+
+    <h1>HOLA YO SOY LA PANTALLA DE INICIO DE SESION</h1> <br><br>
+
+    <a href="{% url 'inicio' %}">IR A INICIO</a>
+    <form method="POST">{% csrf_token %}
+
+        {{form.errors}}
+        
+        <input type="text" name="username" placeholder="USUARIO">
+        <input type="password" name="password" placeholder="PASSWORD">
+
+        <input type="submit" name="" value="ENVIAR">
+    </form>
+
+
+{% endblock contenido %}
+    

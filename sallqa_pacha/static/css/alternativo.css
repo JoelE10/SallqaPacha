@@ -1,0 +1,126 @@
+*{
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+}
+
+body {
+    font-family:'Lato', sans-serif;
+    font-size: 18px;
+}
+
+h1, h2, h3, h4, h5, h6{
+    text-align: center;
+    margin-bottom: 0; 
+}
+
+p {
+    text-align: right;
+    font-size: 35px;
+    padding-right: 150px;
+}
+   
+.texto-naranja{
+    font-weight: 300px;
+    color: #dd9714;
+}
+
+.texto-blanco{
+    font-weight: 700px;
+    color: white;
+}
+
+.texto-negro{
+    color: black;
+}
+/*--- Clases de fullpage---*/
+#fp-nav ul li a span {
+    background: #dd9714;
+}
+#fp-nav ul li .fp-tooltip {
+    color: #8a867e;
+}
+
+/*---Menú de navegación*/
+
+.nav {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 70;
+    width: 100%;
+    margin: 0;
+    padding: 10px 20px;
+}
+.nav li,
+.nav a {
+    display: inline-block;
+    margin: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    font-size: 19px;
+    color: #f6edda;
+    transition: .5s ease;
+    
+}
+.nav li.active {
+    border-bottom: 2px solid #dd9714;
+}
+
+
+/* Header*/
+.header{
+    background: url('../img/home.jpg');
+    background-position:center;
+    background-size:cover;
+  
+    
+}
+
+
+.header .contenedor-titulo{
+    text-align: right;
+    position: relative;
+    z-index: 99;
+}
+
+.header .titulo {
+    text-align: right;
+    font-size: 70px;
+    padding-right: 190px;
+}
+
+.header .contenedor-icono {
+    position:relative;
+    z-index: 99;
+    bottom: 3%;
+    left: 50%;
+    font-size: 40px;
+    animation: bajar-subir 1s ease infinite;
+}
+
+/* Videos
+.bg-video {
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    background: olivedrab;
+    background-position:center;
+    background-size: contain;
+    object-fit: cover;
+}
+*/
+
+/*Animaciones*/
+
+@keyframes bajar-subir {
+    0% { transform: translateY(20px); }
+    25% { transform: translateY(0px); }
+    100% { transform: translateY(20px); }
+
+}

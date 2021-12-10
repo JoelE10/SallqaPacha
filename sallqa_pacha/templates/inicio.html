@@ -1,0 +1,69 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sallqua Pacha</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+</head>
+
+<body>
+    ahfuqw9qfqwkdqwid
+    <header class="header">
+        <nav>
+            <div class="nav__perfil">
+                <h1 class="salqua">Sallqua Pacha</h1>
+
+            </div>
+
+
+
+            <ul>
+                <li><a href="{% url 'app_nameforogeneral:boton_forogeneral' %}">Blog</a></li>
+                <li><a href="{% url 'app_acercade:boton_acercade' %}">Acerca De</a></li>
+                <li><a href="{% url 'app_objetivosonu:boton_objetivosONU' %}">Objetivos ONU</a>
+                    <!---->
+                    <ul>
+
+                        <h2>Pobreza</h2>
+
+                        <h2>Educación y Trabajo</h2>
+
+                        <h2>Cambio Climático</h2>
+
+                        <h2>Comunidad</h2>
+                    </ul>
+                    <!---->
+
+
+                    <!-- ============== 
+                            <a href="{% url 'app_iniciodesesion:boton_iniciodesesion' %}">Iniciar Sesión</a> 
+                                <hr>
+                            <a href="{% url 'app_registrar:boton_registrar' %}">Registrar</a>
+                            MENU NAV BAR DERECHA ===========-->
+                    <div>
+                        <ul>
+                            <li>
+                                {% if user.is_authenticated %}
+                                <span>WELCOME {{ user.username }}</span>
+                                <a href="{% url 'logout' %}">Cerrar sesion</a> {% else %}
+                                <a href="{% url 'login' %}">Iniciar Sesión</a>
+                                <a href="">Registrar</a> {% endif %}
+                            </li>
+                        </ul>
+                    </div>
+
+        </nav>
+    </header>
+
+
+
+
+
+    {% block contenido %} {% endblock contenido %}
+
+
+</body>

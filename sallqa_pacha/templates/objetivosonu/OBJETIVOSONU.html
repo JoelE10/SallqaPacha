@@ -1,0 +1,59 @@
+{% extends 'inicio.html' %} {% block contenido %}
+
+<h1>HOLA YO SOY LA PANTALLA DE OBJETIVOS ONU</h1> <br><br><br>
+
+<a href="{% url 'inicio' %}">IR A INICIO</a>
+
+<ul>
+
+    <li>
+        <a href="#">
+            <h2>Pobreza</h2>
+        </a>
+        <ul>
+            <li><a href="#">Fin de la pobreza</a></li>
+            <li><a href="#">Hambre Cero</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">
+            <h2>Educación y Trabajo</h2>
+        </a>
+        <ul>
+            <li><a href="#">Educación de calidad</a></li>
+            <li><a href="#">Trabajo decente</a></li>
+            <li><a href="#">Industria</a></li>
+            <li><a href="#">No desigualdades</a></li>
+            <li><a href="#">Ciudades sostenibles</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">
+            <h2>Cambio Climático</h2>
+        </a>
+        <ul>
+            <li><a href="#">Energía no contaminante</a></li>
+            <li><a href="#">Producción y consumo responsable</a></li>
+            <li><a href="#">Acción por el clima</a></li>
+            <li><a href="#">Vida submarina</a></li>
+            <li><a href="#">Vida ecosistemas terrestres</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">
+            <h2>Comunidad</h2>
+        </a>
+        <ul>
+            <li><a href="#">Salud y Bienestar</a></li>
+            <li><a href="#">Igualdad de género</a></li>
+            <li><a href="#">Agua limpia</a></li>
+            <li><a href="#">Paz y justicia</a></li>
+        </ul>
+    </li>
+</ul>
+</li>
+</ul>
+{% endblock contenido %}
