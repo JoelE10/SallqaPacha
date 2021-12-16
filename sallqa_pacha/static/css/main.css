@@ -1,5 +1,4 @@
 
-
 /*GOOGLE FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Raleway&display=swap');
 /* VARIABLES CSS */
@@ -66,8 +65,9 @@
     background: #ffc517;
 }
 
-img{
-    width: 30px;
+.img {
+    
+    width: 300px;
 }
 
 .header nav{
@@ -85,6 +85,7 @@ img{
 .salqua{
     color: var(--white-color);
     display: flex;
+}
 .sallqa{
     color: var(--white-color);
     display: flex;

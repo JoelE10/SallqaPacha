@@ -1,10 +1,22 @@
-{% extends 'inicio.html' %} {% block contenido %}
+{% extends 'inicio.html' %}
+{% block contenido %}
 
-<h1>HOLA YO SOY LA PANTALLA DE OBJETIVOS ONU</h1> <br><br><br>
+<h1>ODS</h1> <br><br><br>
 
 <a href="{% url 'inicio' %}">IR A INICIO</a>
-
-<ul>
+<main>
+    {% for a in odss %}
+        
+        <a href="{% url 'app_objetivosonu:posts' a.pk%}">
+            <div >
+                <p>{{a.nombre}}</p>
+                <img src="{{a.imagen.url}}" width="300px" >
+                <p>{{a.descripcion}}</p>
+            </div>
+        </a>
+    {% endfor  %}
+</main>
+<!---<ul>
 
     <li>
         <a href="#">
@@ -55,5 +67,5 @@
     </li>
 </ul>
 </li>
-</ul>
+</ul> -->
 {% endblock contenido %}

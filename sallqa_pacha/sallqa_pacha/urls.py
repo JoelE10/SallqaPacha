@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 from .import views
 from django.contrib.auth import views as auth
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
-    #path('', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('', views.Inicio, name = 'inicio'),
     #ENLACES A APPS
     path('forogeneral/', include('apps.forogeneral.urls')),
@@ -30,4 +32,4 @@ urlpatterns = [
     path('login/', auth.LoginView.as_view(template_name="iniciosesion/INICIODESESION.html"), name='login'),
     path('logout/', auth.LogoutView.as_view(), name='logout'),
     
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

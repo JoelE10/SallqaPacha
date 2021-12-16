@@ -1,0 +1,17 @@
+{% extends 'inicio.html' %}
+
+{% block contenido %}
+<a href="{% url 'inicio' %}">IR A INICIO</a>
+
+    
+     <main>
+        <h1>{{l.titulo}}</h1>
+        <img src="{{l.imagen.url}}" width="300px" >
+        <p>{{l.descripcion}}</p>
+        <p>{{l.cuerpo}}</p>
+        <p>{{l.fecha}}</p>
+     </main>
+    
+{% endblock contenido %}
+
+

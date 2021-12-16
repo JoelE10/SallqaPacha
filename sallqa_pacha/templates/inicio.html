@@ -4,38 +4,25 @@
 <html>
 
 <head>
-    <title>Sallqua Pacha</title>
+    <title>Sallqa Pacha</title>
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 
 </head>
 
 <body>
-    ahfuqw9qfqwkdqwid
     <header class="header">
         <nav>
             <div class="nav__perfil">
                 <h1 class="salqua">Sallqua Pacha</h1>
 
             </div>
-
-
-
             <ul>
                 <li><a href="{% url 'app_nameforogeneral:boton_forogeneral' %}">Blog</a></li>
-                <li><a href="{% url 'app_acercade:boton_acercade' %}">Acerca De</a></li>
-                <li><a href="{% url 'app_objetivosonu:boton_objetivosONU' %}">Objetivos ONU</a>
+                <li><a href="{% url 'app_acercade:boton_acercade' %}">Acerca de nosotros</a></li>
+                <li><a href="{% url 'app_objetivosonu:boton_objetivosONU' %}">ODS</a>
                     <!---->
-                    <ul>
-
-                        <h2>Pobreza</h2>
-
-                        <h2>Educación y Trabajo</h2>
-
-                        <h2>Cambio Climático</h2>
-
-                        <h2>Comunidad</h2>
-                    </ul>
+                  
                     <!---->
 
 
@@ -48,10 +35,10 @@
                         <ul>
                             <li>
                                 {% if user.is_authenticated %}
-                                <span>WELCOME {{ user.username }}</span>
-                                <a href="{% url 'logout' %}">Cerrar sesion</a> {% else %}
+                                <span>Bienvenido {{ user.username }}</span>
+                                <a href="{% url 'logout' %}">Cerrar Sesion</a> {% else %}
                                 <a href="{% url 'login' %}">Iniciar Sesión</a>
-                                <a href="">Registrar</a> {% endif %}
+                                <a href="{% url 'app_registrar:boton_registrar' %}">Registrarse</a> {% endif %}
                             </li>
                         </ul>
                     </div>
@@ -60,10 +47,18 @@
     </header>
 
 
+    {% block contenido %} 
+    <main>
+        <section>
+            <h2>
+                Pantalla inicio
+            </h2>
+        </section>
+    </main>
+    {% endblock contenido %}
 
-
-
-    {% block contenido %} {% endblock contenido %}
-
-
+    <footer>
+        <h3>Proyecto Sallqua Pacha</h3>
+        <h3>Informatorio</h3>
+    </footer>
 </body>
