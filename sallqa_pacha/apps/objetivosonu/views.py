@@ -1,9 +1,9 @@
 
 from django.shortcuts import render
-from .models import Ods, post
+from .models import Ods, Post, Comment
 from django.views.generic import CreateView
 from django.urls import reverse_lazy
-from .forms import formulario_altapost
+from .forms import formulario_altapost, CommentForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
@@ -11,6 +11,12 @@ class AltaPost(LoginRequiredMixin, CreateView):
     model = 'post'
     template_name = 'objetivosonu/altapost.html'
     form_class = formulario_altapost
+    success_url = reverse_lazy('inicio')
+
+class AddCommentView(CreateView):
+    model = Comment
+    form_class = CommentForm
+    template_name = 'add_comment.html'
     success_url = reverse_lazy('inicio')
     
 
@@ -34,7 +40,7 @@ def objetivos_ONU(request):
 
 def posts(request, pk):
     ods = Ods.objects.get(pk = pk )
-    p = post.objects.filter(ods = ods)
+    p = Post.objects.filter(ods = ods)
     ctx = {}
     ctx['p'] = p
     
@@ -42,9 +48,14 @@ def posts(request, pk):
 
 def posteo(request, pk):
     
-    l = post.objects.get(pk = pk)
+    post = Post.objects.get(pk = pk)
     ctx = {}
-    ctx['l'] = l
+    ctx['post'] = post
+
 
     return render(request, 'objetivosonu/posteo.html', ctx)
+
+
+
+
     

@@ -9,9 +9,12 @@
         
         <a href="{% url 'app_objetivosonu:posts' a.pk%}">
             <div >
-                <p>{{a.nombre}}</p>
+                <br>
+                <p><strong>{{a.nombre}}</strong></p>
                 <img src="{{a.imagen.url}}" width="300px" >
                 <p>{{a.descripcion}}</p>
+                <br>
+                <br>
             </div>
         </a>
     {% endfor  %}

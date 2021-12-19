@@ -5,12 +5,40 @@
 
     
      <main>
-        <h1>{{l.titulo}}</h1>
-        <img src="{{l.imagen.url}}" width="300px" >
-        <p>{{l.descripcion}}</p>
-        <p>{{l.cuerpo}}</p>
-        <p>{{l.fecha}}</p>
+        <h1>{{post.titulo}}</h1>
+        <img src="{{post.imagen.url}}" width="300px" >
+        <p>{{post.descripcion}}</p>
+        <p>{{post.cuerpo}}</p>
+        <p>{{post.fecha}}</p>
+
+         </p>
      </main>
+     <br><br>
+             <p><h2>Comentarios</h2>
+                <br>
+{% if not post.comments.all %}
+    No Comments Yet... <a href="{% url 'add_comment' post.pk %}">Add One</a>
+{% else %}
+    {% for comment in post.comments.all %}
+        <strong>
+        {{ comment.name }} -
+        {{ comment.date_added }} -
+        </strong>
+        <br>
+        {{ comment.body}}
+        <br><br>
+    {% endfor %}
+    <a href="{% url 'add_comment' post.pk %}">
+    Add Comment
+    </a>
+
+{% endif %}
+<br>
+
+ 
+
+ <br>
+    
     
 {% endblock contenido %}
 

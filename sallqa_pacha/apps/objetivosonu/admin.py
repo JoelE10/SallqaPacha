@@ -1,9 +1,8 @@
 from django.contrib import admin
 
-from .models import Ods, post, comentario, Like, PostView
+from .models import Ods, Post, PostView, Comment
 
 admin.site.register(Ods)
-admin.site.register(post)
-admin.site.register(comentario)
-admin.site.register(Like)
+admin.site.register(Post)
 admin.site.register(PostView)
+admin.site.register(Comment)

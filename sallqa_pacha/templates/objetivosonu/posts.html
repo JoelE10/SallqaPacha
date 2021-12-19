@@ -2,7 +2,7 @@
 
 {% block contenido %}
 <a href="{% url 'inicio' %}">IR A INICIO</a>
-<a href="{% url 'app_objetivosonu:altapost' %}">Crear un post</a>
+
 {% for a in p %}
     <a href="{% url 'app_objetivosonu:posteo' a.pk %}">
         <div>
@@ -10,13 +10,8 @@
             <img src="{{a.imagen.url}}" width="200px" >
             <p>{{a.descripcion}}</p>
             <p>{{a.fecha}}</p>
-            <div>
-                <span> {{ object.get_like_count }}</span>
-                <span> {{ object.get_view_count }}</span>
-                <span>{{ object.get_comment_count }}</span>
-            </div>
-        </div>
+        <div>
     </a>
-    
+
 {% endfor %}
-{% endblock contenido %}
+{%endblock contenido %}

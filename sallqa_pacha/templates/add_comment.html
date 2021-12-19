@@ -1,0 +1,15 @@
+{% extends 'inicio.html' %}
+
+{% block contenido %}
+
+
+<h1>Add Comment</h1>
+
+	<div class="form-group">
+<form method="POST">
+		{% csrf_token %}
+		{{form.as_p}}
+		<button class="btn btn-secundary">Add Comment</button>
+</form>
+	</div>
+{% endblock contenido %}

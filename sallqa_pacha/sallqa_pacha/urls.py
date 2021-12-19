@@ -14,11 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.conf.urls import url
 from django.urls import path, include
 from .import views
 from django.contrib.auth import views as auth
 from django.conf.urls.static import static
 from django.conf import settings
+from .views import AddCommentView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,5 +33,7 @@ urlpatterns = [
     path('registrar/', include('apps.registrar.urls')),
     path('login/', auth.LoginView.as_view(template_name="iniciosesion/INICIODESESION.html"), name='login'),
     path('logout/', auth.LogoutView.as_view(), name='logout'),
-    
+    path('posteo/<int:pk>/comment', AddCommentView.as_view(), name='add_comment'),
+
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
